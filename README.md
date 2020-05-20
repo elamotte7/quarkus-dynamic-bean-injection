@@ -36,7 +36,7 @@ With this sample project we demonstrate how we can inject at runtime a specific 
 We have two different services (ServiceAImpl and ServiceBImpl) implementing a service interface IService.
 both implement a greetings method. 
 Now we want to produce an instanciation of this interface with the desired implementation 
-defined in the configuration file *appliccation.properties*.
+defined in the configuration file *application.properties*.
 
 Start the application and go to http://localhost:8080/hello in your favorite browser
 you will see
