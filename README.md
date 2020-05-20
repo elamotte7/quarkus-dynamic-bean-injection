@@ -28,3 +28,28 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 You can then execute your native executable with: `./target/quarkus-dynamic-bean-injection-1.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/building-native-image.
+
+## Purpose of this sample
+
+With this sample project we demonstrate how we can inject at runtime a specific implementation.
+
+We have two different services (ServiceAImpl and ServiceBImpl) implementing a service interface IService.
+both implement a greetings method. 
+Now we want to produce an instanciation of this interface with the desired implementation 
+defined in the configuration file *appliccation.properties*.
+
+Start the application and go to http://localhost:8080/hello in your favorite browser
+you will see
+
+```Hello World from Service A !```
+
+Then go to the application.properties file and change 
+```inject.service.impl=servicea``` 
+by 
+```inject.service.impl=serviceb```
+
+Refresh your browser, you will see 
+
+```Hello World from service B !```
+
+The live reload works! And Voilà.
